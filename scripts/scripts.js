@@ -22,26 +22,32 @@ function handleFormSubmission(event) {
 //in order to recreate an instance of Pizza
   let myPizza = new Pizza(inputtedSize, inputtedToppings);
 console.log(myPizza);
+console.log(inputtedToppings);
+console.log(myPizza.toppings);
   listPrice();
 }
 
 function listPrice(priceToDisplay) {
   let orderSummaryDiv = document.querySelector("div#order-summary");
   orderSummaryDiv.innerText = null;
-  const p = document.createElement("p");
-  // const price = priceToDisplay.determineCost(key);
-  // p.append(price);
-  p.append(myPizza.determineCost());
-  orderSummaryDiv.append(p);
+  const ul = document.createElement("ul");
+Object.keys(priceToDisplay.myPizza).forEach(function(key);{
+  const price = myPizza.determineCost(key);
+  const li = document.createElement("li");
+  li.append(myPizza.size);
+  ul.append(li);
+});
+  orderSummaryDiv.append(ul);
 }
 
-function displayOrderDetails(pizzaResultsToDisplay) {
-  let orderSummaryDiv = document.querySelector("div#order-summary");
-  orderSummaryDiv = null;
-  const p = document.createElement("p");
+
+// function displayOrderDetails(pizzaResultsToDisplay) {
+//   let orderSummaryDiv = document.querySelector("div#order-summary");
+//   orderSummaryDiv = null;
+//   const p = document.createElement("p");
 
 
-}
+// }
 
 
 //Buisness logic
