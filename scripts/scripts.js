@@ -1,4 +1,10 @@
 //UI logic
+window.addEventListener("load", function (){
+  document.querySelector("form#new-contact").addEventListener("submit", handleFormSubmission);
+  document.querySelector("div#contacts").addEventListener("click", displayContactDetails);
+  document.querySelector("button.delete").addEventListener("click", handleDelete);
+});
+
 //in order to recreate an instance of Pizza
 let myPizza = new Pizza("small", ["cheese", "pepp", "moose"]);
 

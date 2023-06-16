@@ -4,6 +4,43 @@
   <title></title>
 </head>
 <body>
-
+  <h2>Follow your heart. Order a pizza:</h2>
+  <form id="new-order">
+    <label for="size-select">How hungry are you?</label>
+      <select name="size" id="size-select">
+          <option value="">--choose a pizza size:--</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+      </select>
+      <fieldset>
+        <legend>What toppings are you yearning for?</legend>
+        <div>
+          <input type="checkbox" id="garlic" name="garlic" checked>
+          <label for="garlic">Black Garlic</label>
+        </div>
+        <div>
+          <input type="checkbox" id="riccotta" name="riccotta">
+          <label for="riccotta">Riccotta</label>
+        </div>
+        <div>
+          <input type="checkbox" id="eggplant" name="eggplant">
+          <label for="eggplant">Eggplant</label>
+        </div>
+        <div>
+          <input type="checkbox" id="duck" name="duck">
+          <label for="duck">Roasted Duck</label>
+        </div>
+        <div>
+          <input type="checkbox" id="morels" name="morels">
+          <label for="morels">Morels</label>
+        </div>
+        <div>
+          <input type="checkbox" id="pistachio" name="pistachio">
+          <label for="horns">Pistachio</label>
+        </div>
+    </fieldset>
+  </form>
+<div id="order-summary"></div>
 </body>
 </html>
