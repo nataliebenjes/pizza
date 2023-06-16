@@ -28,16 +28,19 @@ console.log(myPizza.toppings);
 }
 
 function listPrice(priceToDisplay) {
-  let orderSummaryDiv = document.querySelector("div#order-summary");
-  orderSummaryDiv.innerText = null;
-  const ul = document.createElement("ul");
-Object.keys(priceToDisplay.myPizza).forEach(function(key);{
-  const price = myPizza.determineCost(key);
-  const li = document.createElement("li");
-  li.append(myPizza.size);
-  ul.append(li);
-});
-  orderSummaryDiv.append(ul);
+    const cost = myPizza.determineCost();
+    console.log(cost);
+    return cost;
+//   let orderSummaryDiv = document.querySelector("div#order-summary");
+//   orderSummaryDiv.innerText = null;
+//   const ul = document.createElement("ul");
+// Object.keys(priceToDisplay.myPizza).forEach(function(key);{
+//   const price = myPizza.determineCost(key);
+//   const li = document.createElement("li");
+//   li.append(myPizza.size);
+//   ul.append(li);
+// });
+//   orderSummaryDiv.append(ul);
 }
 
 
