@@ -20,10 +20,9 @@ function handleFormSubmission(event) {
 
   console.log(inputtedToppings);
 //in order to recreate an instance of Pizza
-  let myPizza = new Pizza();
-  myPizza.size = inputtedSize.value;
-  myPizza.toppings = inputtedToppings.value;
-  console.log(myPizza);
+  let myPizza = new Pizza(inputtedSize, inputtedToppings);
+console.log(myPizza);
+
 }
 
 function displayOrderDetails(pizzaResultsToDisplay) {
@@ -40,7 +39,7 @@ function displayOrderDetails(pizzaResultsToDisplay) {
 function Pizza(size, toppings){
   this.size = size;
   this.toppings = toppings;
-  this.price = 0;
+  this.price = 0
 }
 
 //function to determine cost based off properties of Pizza
@@ -62,6 +61,8 @@ Pizza.prototype.determineCost = function(){
   } else if (this.toppings.length > 4) {
     toppingFactor = 5;
   }
+  
   return 10 * sizeFactor + toppingFactor;
 }
+
 
