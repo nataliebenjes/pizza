@@ -1,9 +1,17 @@
 //UI logic
 window.addEventListener("load", function (){
-  document.querySelector("form#new-contact").addEventListener("submit", handleFormSubmission);
-  document.querySelector("div#contacts").addEventListener("click", displayContactDetails);
-  document.querySelector("button.delete").addEventListener("click", handleDelete);
+  document.querySelector("form#new-order").addEventListener("submit", handleFormSubmission);
+  document.querySelector("div#contacts").addEventListener("click", displayOrderDetails);
 });
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const inputtedSize = document.querySelector("input#size-select").value;
+  const inputtedToppings = document.querySelectorAll(".checkbox-input").value;
+//in order to recreate an instance of Pizza
+  let myPizza = new Pizza(inputtedSize, inputtedToppings);
+
+}
 
 //in order to recreate an instance of Pizza
 let myPizza = new Pizza("small", ["cheese", "pepp", "moose"]);
