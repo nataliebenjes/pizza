@@ -7,14 +7,14 @@ function handleFormSubmission(event) {
   event.preventDefault();
   const inputtedSize = document.querySelector("#size-select").value;
   console.log(inputtedSize);
-  const checkboxes = document.querySelectorAll(".checkbox-input").value;
-  console.log(checkboxes);
+  const checkboxes = document.getElementsByName('ingredient');
   const inputtedToppings = [];
-  checkboxes.forEach(checkbox => {
-    if (checkbox.checked) {
-      inputtedToppings.push(checkbox.value);
+  for (let i=0; i<checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+        inputtedToppings.push(checkboxes[i].value);
     }
-  })
+  }
+
   console.log(inputtedToppings);
 //in order to recreate an instance of Pizza
   let myPizza = new Pizza(inputtedSize, inputtedToppings);
