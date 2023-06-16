@@ -44,9 +44,9 @@ Pizza.prototype.determineCost = function(){
   if (this.size = "small") {
     sizeFactor = 1;
   } else if (this.size = "medium") {
-    sizeFactor = 1.5;
+    sizeFactor = 2;
   } else if (this.size = "large") {
-    sizeFactor = 1.75;
+    sizeFactor = 3;
   }
 
   if (this.toppings.length < 3) {
@@ -57,7 +57,7 @@ Pizza.prototype.determineCost = function(){
     toppingFactor = 5;
   }
   
-  return 10 * sizeFactor + toppingFactor;
+  return 10 + sizeFactor + toppingFactor;
 }
 
 
