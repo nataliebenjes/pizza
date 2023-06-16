@@ -3,6 +3,9 @@ window.addEventListener("load", function (){
   document.querySelector("form#new-order").addEventListener("submit", handleFormSubmission);
 });
 
+//create global variable
+let myPizza = new Pizza();
+  
 function handleFormSubmission(event) {
   event.preventDefault();
   const inputtedSize = document.querySelector("#size-select").value;
@@ -23,12 +26,11 @@ function handleFormSubmission(event) {
   // document.querySelector(".checkbox-input").value = null;
 }
 
-function displayOrderDetails(event) {
-  const contact = addressBook.findContact(event.target.id);
-  document.querySelector(".selected-toppings").innerText = myPizza.toppings;
-  document.querySelector(".selected-size").innerText = myPizza.size;
-  document.querySelector(".order-total").innerText = myPizza.determineCost();
-  document.querySelector("div#order-summary").removeAttribute("class");
+function displayOrderDetails(pizzaResultsToDisplay) {
+  let orderSummaryDiv = document.querySelector("div#order-summary");
+  orderSummaryDiv = null;
+  const p = document.createElement("p");
+
 }
 
 
