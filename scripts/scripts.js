@@ -9,7 +9,6 @@ let myPizza = new Pizza();
 function handleFormSubmission(event) {
   event.preventDefault();
   const inputtedSize = document.querySelector("#size-select").value;
-  console.log(inputtedSize);
   const checkboxes = document.getElementsByName('ingredient');
   const inputtedToppings = [];
   for (let i=0; i<checkboxes.length; i++) {
@@ -17,40 +16,17 @@ function handleFormSubmission(event) {
         inputtedToppings.push(checkboxes[i].value);
     }
   }
-
-  console.log(inputtedToppings);
-//in order to recreate an instance of Pizza
+  //in order to recreate an instance of Pizza
   let myPizza = new Pizza(inputtedSize, inputtedToppings);
-console.log(myPizza);
-console.log(inputtedToppings);
-console.log(myPizza.toppings);
-  listPrice();
+  displayPrice(myPizza.determineCost());
 }
 
-function listPrice(priceToDisplay) {
-    const cost = myPizza.determineCost();
-    console.log(cost);
-    return cost;
-//   let orderSummaryDiv = document.querySelector("div#order-summary");
-//   orderSummaryDiv.innerText = null;
-//   const ul = document.createElement("ul");
-// Object.keys(priceToDisplay.myPizza).forEach(function(key);{
-//   const price = myPizza.determineCost(key);
-//   const li = document.createElement("li");
-//   li.append(myPizza.size);
-//   ul.append(li);
-// });
-//   orderSummaryDiv.append(ul);
+function displayPrice(price) {
+    const priceElement = document.getElementById('price');
+    priceElement.textContent = "Price: $" + price;
 }
 
 
-// function displayOrderDetails(pizzaResultsToDisplay) {
-//   let orderSummaryDiv = document.querySelector("div#order-summary");
-//   orderSummaryDiv = null;
-//   const p = document.createElement("p");
-
-
-// }
 
 
 //Buisness logic
@@ -59,7 +35,6 @@ function listPrice(priceToDisplay) {
 function Pizza(size, toppings){
   this.size = size;
   this.toppings = toppings;
-  // this.price = 0
 }
 
 //function to determine cost based off properties of Pizza
