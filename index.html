@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title></title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="scripts/scripts.js"></script>
+  <title>Pizza Shop</title>
 </head>
 <body>
   <h2>Follow your heart. Order a pizza:</h2>
@@ -40,12 +42,14 @@
           <label for="horns">Pistachio</label>
         </div>
     </fieldset>
-    <button submit="submit"></button>
+    <button submit="submit">Get that pizza.</button>
   </form>
   <div id="order-summary" class="hidden">
     <h2>Order Summary:</h2>
     <p>Toppings included: <span class="selected-toppings"></span></p>
     <p>Size: <span class="selected-size"></span></p>
+    <p>Total: <span class="order-total"></span></p>
+
     <!-- <button type="button">New Order</button> -->
   </div>
 </body>

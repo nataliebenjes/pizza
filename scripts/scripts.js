@@ -6,7 +6,15 @@ window.addEventListener("load", function (){
 function handleFormSubmission(event) {
   event.preventDefault();
   const inputtedSize = document.querySelector("input#size-select").value;
-  const inputtedToppings = document.querySelectorAll(".checkbox-input").value;
+  const checkboxes = document.querySelectorAll(".checkbox-input").value;
+  console.log(checkboxes);
+  const inputtedToppings = [];
+  checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      inputtedToppings.push(checkbox.value);
+    }
+  })
+  console.log(inputtedToppings);
 //in order to recreate an instance of Pizza
   let myPizza = new Pizza(inputtedSize, inputtedToppings);
   displayOrderDetails(myPizza);
@@ -18,11 +26,10 @@ function displayOrderDetails(event) {
   const contact = addressBook.findContact(event.target.id);
   document.querySelector(".selected-toppings").innerText = myPizza.toppings;
   document.querySelector(".selected-size").innerText = myPizza.size;
+  document.querySelector(".order-total").innerText = myPizza.determineCost();
   document.querySelector("div#order-summary").removeAttribute("class");
 }
 
-//in order to recreate an instance of Pizza
-let myPizza = new Pizza("small", ["cheese", "pepp", "moose"]);
 
 //Buisness logic
 
