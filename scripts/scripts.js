@@ -5,7 +5,8 @@ window.addEventListener("load", function (){
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const inputtedSize = document.querySelector("input#size-select").value;
+  const inputtedSize = document.querySelector("#size-select").value;
+  console.log(inputtedSize);
   const checkboxes = document.querySelectorAll(".checkbox-input").value;
   console.log(checkboxes);
   const inputtedToppings = [];
