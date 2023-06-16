@@ -22,13 +22,24 @@ function handleFormSubmission(event) {
 //in order to recreate an instance of Pizza
   let myPizza = new Pizza(inputtedSize, inputtedToppings);
 console.log(myPizza);
+  listPrice();
+}
 
+function listPrice(priceToDisplay) {
+  let orderSummaryDiv = document.querySelector("div#order-summary");
+  orderSummaryDiv.innerText = null;
+  const p = document.createElement("p");
+  // const price = priceToDisplay.determineCost(key);
+  // p.append(price);
+  p.append(myPizza.determineCost());
+  orderSummaryDiv.append(p);
 }
 
 function displayOrderDetails(pizzaResultsToDisplay) {
   let orderSummaryDiv = document.querySelector("div#order-summary");
   orderSummaryDiv = null;
   const p = document.createElement("p");
+
 
 }
 
@@ -39,7 +50,7 @@ function displayOrderDetails(pizzaResultsToDisplay) {
 function Pizza(size, toppings){
   this.size = size;
   this.toppings = toppings;
-  this.price = 0
+  // this.price = 0
 }
 
 //function to determine cost based off properties of Pizza
