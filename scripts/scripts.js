@@ -1,7 +1,6 @@
 //UI logic
 window.addEventListener("load", function (){
   document.querySelector("form#new-order").addEventListener("submit", handleFormSubmission);
-  document.querySelector("div#contacts").addEventListener("click", displayOrderDetails);
 });
 
 function handleFormSubmission(event) {
@@ -10,7 +9,16 @@ function handleFormSubmission(event) {
   const inputtedToppings = document.querySelectorAll(".checkbox-input").value;
 //in order to recreate an instance of Pizza
   let myPizza = new Pizza(inputtedSize, inputtedToppings);
+  displayOrderDetails(myPizza);
+  // document.querySelector("input#size-select").value = null;
+  // document.querySelector(".checkbox-input").value = null;
+}
 
+function displayOrderDetails(event) {
+  const contact = addressBook.findContact(event.target.id);
+  document.querySelector(".selected-toppings").innerText = myPizza.toppings;
+  document.querySelector(".selected-size").innerText = myPizza.size;
+  document.querySelector("div#order-summary").removeAttribute("class");
 }
 
 //in order to recreate an instance of Pizza
