@@ -20,10 +20,10 @@ function handleFormSubmission(event) {
 
   console.log(inputtedToppings);
 //in order to recreate an instance of Pizza
-  let myPizza = new Pizza(inputtedSize, inputtedToppings);
-  displayOrderDetails(myPizza);
-  // document.querySelector("input#size-select").value = null;
-  // document.querySelector(".checkbox-input").value = null;
+  let myPizza = new Pizza();
+  myPizza.size = inputtedSize.value;
+  myPizza.toppings = inputtedToppings.value;
+  console.log(myPizza);
 }
 
 function displayOrderDetails(pizzaResultsToDisplay) {
@@ -64,3 +64,4 @@ Pizza.prototype.determineCost = function(){
   }
   return 10 * sizeFactor + toppingFactor;
 }
+
