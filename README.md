@@ -1,4 +1,4 @@
-# _Mr-Roboger-s-Neighborhood_
+# _Pizza_
 
 #### By _**Natalie Benjes**_
 
@@ -40,4 +40,7 @@ myPizza.determineCost();
 Expected output myPizza.determineCost();  
 13;
 
+## License
 
+[MIT License](https://opensource.org/licenses/MIT).
+Copyright (c) _2023_Natalie Benjes_
